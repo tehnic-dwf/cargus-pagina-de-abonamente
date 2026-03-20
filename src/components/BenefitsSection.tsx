@@ -35,9 +35,9 @@ const BenefitsSection = () => {
         {primaryBenefits.map((b, i) => (
           <li key={i} className="flex items-start gap-3.5 px-4">
             <div
-              className="w-9 h-9 flex items-center justify-center shrink-0 rounded-lg bg-cargus-orange-light"
+              className="w-9 h-9 flex items-center justify-center shrink-0 rounded-lg bg-foreground"
             >
-              <b.icon size={16} className="text-foreground" strokeWidth={2.5} />
+              <b.icon size={16} className="text-primary-foreground" strokeWidth={2.5} />
             </div>
             <div className="min-w-0">
               <p className="font-bold text-[14px] text-foreground">{b.title}</p>
