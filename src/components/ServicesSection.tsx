@@ -21,11 +21,11 @@ const ServicesSection = () => {
             {s.tag && (
               <span className="badge-orange absolute top-2.5 right-2.5 !text-[9px] !px-2 !py-0.5">{s.tag}</span>
             )}
-            <div className="w-10 h-10 rounded-xl bg-cargus-orange-light flex items-center justify-center mb-3">
-              <s.icon size={18} className="text-cargus-orange" strokeWidth={2.5} />
+            <div className="w-8 h-8 rounded-lg bg-cargus-orange-light flex items-center justify-center mb-4">
+              <s.icon size={16} className="text-cargus-orange" strokeWidth={2.5} />
             </div>
             <h3 className="font-bold text-[13px] text-foreground leading-tight">{s.title}</h3>
-            <p className="text-[11px] text-muted-foreground mt-1 leading-relaxed">{s.desc}</p>
+            <p className="text-[11px] text-muted-foreground mt-1.5 leading-relaxed">{s.desc}</p>
           </div>
         ))}
       </div>

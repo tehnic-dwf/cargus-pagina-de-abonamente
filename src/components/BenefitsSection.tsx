@@ -14,11 +14,14 @@ const BenefitsSection = () => {
     <section id="beneficii" className="section-padding !py-10 bg-secondary">
       <h2 className="section-heading !text-xl">De ce aleg antreprenorii Cargus?</h2>
 
-      <ul className="mt-6 space-y-3">
+      <ul className="mt-6 space-y-2">
         {benefits.map((b, i) => (
-          <li key={i} className="flex items-center gap-3.5 bg-card rounded-xl px-4 py-3 shadow-card">
-            <div className="w-9 h-9 rounded-lg bg-cargus-orange-light flex items-center justify-center shrink-0">
-              <b.icon size={18} className="text-cargus-orange" strokeWidth={2.5} />
+          <li key={i} className="flex items-center gap-3.5 px-4 py-2.5">
+            <div
+              className="w-8 h-8 flex items-center justify-center shrink-0 bg-cargus-orange-light"
+              style={{ borderRadius: 6 }}
+            >
+              <b.icon size={16} className="text-cargus-orange" strokeWidth={2.5} />
             </div>
             <div className="min-w-0">
               <span className="font-bold text-[14px] text-foreground">{b.text}</span>
