@@ -1,35 +1,66 @@
-import { Truck, MapPin, Eye, ArrowLeftRight, Banknote, Headphones } from "lucide-react";
+import { ArrowRight, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck } from "lucide-react";
 
-const benefits = [
-  { icon: Truck, text: "Livrare în 24-48h", detail: "98% din colete" },
-  { icon: MapPin, text: "3.000+ puncte SHIP & GO", detail: "Rețea națională" },
-  { icon: Eye, text: "Tracking în timp real", detail: "Notificări automate" },
-  { icon: ArrowLeftRight, text: "Retur simplificat", detail: "Opțiuni flexibile" },
-  { icon: Banknote, text: "Plată ramburs inclus", detail: "Fără costuri extra" },
-  { icon: Headphones, text: "Suport dedicat business", detail: "Luni-Vineri" },
+const primaryBenefits = [
+  {
+    icon: ArrowRight,
+    title: "Livrare în 24-48h",
+    desc: "98% din colete ajung la timp. Garanție de performanță.",
+  },
+  {
+    icon: MapPin,
+    title: "3.000+ puncte ridicare",
+    desc: "Clienții tăi ridică coletul de lângă ei.",
+  },
+  {
+    icon: Banknote,
+    title: "Ramburs fără costuri extra",
+    desc: "Banii ajung la tine automat, inclus în tarif.",
+  },
+];
+
+const secondaryBenefits = [
+  { icon: Eye, text: "Tracking real-time" },
+  { icon: ArrowLeftRight, text: "Retur simplificat" },
+  { icon: Headphones, text: "Suport business" },
+  { icon: UserCheck, text: "Manager dedicat" },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section id="beneficii" className="section-padding !py-10 bg-secondary">
+    <section id="beneficii" className="section-padding !py-10 bg-card border border-border rounded-2xl mx-5">
       <h2 className="section-heading !text-xl">De ce aleg antreprenorii Cargus?</h2>
 
-      <ul className="mt-6 space-y-2">
-        {benefits.map((b, i) => (
-          <li key={i} className="flex items-center gap-3.5 px-4 py-2.5">
+      {/* Primary benefits */}
+      <ul className="mt-6 space-y-5">
+        {primaryBenefits.map((b, i) => (
+          <li key={i} className="flex items-start gap-3.5 px-4">
             <div
-              className="w-8 h-8 flex items-center justify-center shrink-0 bg-cargus-orange-light"
-              style={{ borderRadius: 6 }}
+              className="w-9 h-9 flex items-center justify-center shrink-0 rounded-lg bg-cargus-orange-light"
             >
-              <b.icon size={16} className="text-cargus-orange" strokeWidth={2.5} />
+              <b.icon size={16} className="text-foreground" strokeWidth={2.5} />
             </div>
             <div className="min-w-0">
-              <span className="font-bold text-[14px] text-foreground">{b.text}</span>
-              <span className="text-xs text-muted-foreground ml-1.5">— {b.detail}</span>
+              <p className="font-bold text-[14px] text-foreground">{b.title}</p>
+              <p className="text-[13px] text-muted-foreground mt-0.5 leading-snug">{b.desc}</p>
             </div>
           </li>
         ))}
       </ul>
+
+      {/* Secondary benefits grid */}
+      <div className="grid grid-cols-2 gap-2.5 mt-6 px-4">
+        {secondaryBenefits.map((b, i) => (
+          <div
+            key={i}
+            className="flex items-center gap-2.5 rounded-lg bg-secondary px-3 py-2.5"
+          >
+            <div className="w-7 h-7 flex items-center justify-center shrink-0 rounded-md bg-cargus-orange-light">
+              <b.icon size={14} className="text-cargus-orange" strokeWidth={2.5} />
+            </div>
+            <span className="text-[13px] font-semibold text-foreground">{b.text}</span>
+          </div>
+        ))}
+      </div>
     </section>
   );
 };
