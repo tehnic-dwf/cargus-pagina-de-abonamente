@@ -4,7 +4,7 @@ const plans = [
   {
     id: "starter",
     volume: "Sub 30 colete/lună",
-    name: "SIGN & GO",
+    name: "Sign & Go",
     desc: "Fără contract, plătești per colet",
     cta: "Începe acum",
     ctaHref: "#cere-oferta",
@@ -13,7 +13,7 @@ const plans = [
   {
     id: "business",
     volume: "30–300 colete/lună",
-    name: "ABONAMENT",
+    name: "Abonament",
     desc: "Tarif fix lunar, manager dedicat de cont",
     cta: "Vezi planuri",
     ctaHref: "#cere-oferta",
@@ -23,7 +23,7 @@ const plans = [
   {
     id: "enterprise",
     volume: "Peste 300 colete/lună",
-    name: "SOLUȚIE PERSONALIZATĂ",
+    name: "Soluție personalizată",
     desc: "Ofertă la cerere, echipă dedicată",
     cta: "Solicită ofertă",
     ctaHref: "#contact",
@@ -36,7 +36,7 @@ const PricingSection = () => {
     <section id="preturi" className="section-padding bg-secondary">
       <h2 className="section-heading">Planuri & Prețuri</h2>
       <p className="section-subheading">
-        Fără costuri ascunse. Alege planul potrivit volumului tău.
+        Alege după volumul lunar de colete.
       </p>
 
       <div className="mt-8 space-y-4">
@@ -44,51 +44,70 @@ const PricingSection = () => {
           <a
             key={plan.id}
             href={plan.ctaHref}
-            className={`block rounded-2xl transition-all duration-200 active:scale-[0.98] ${
-              plan.featured
-                ? "border-2 bg-card shadow-card-hover"
-                : "border bg-card shadow-card"
-            }`}
+            className="group block rounded-2xl transition-all duration-200 active:scale-[0.98]"
             style={{
-              borderColor: plan.featured
-                ? "hsl(var(--cargus-orange))"
-                : "hsl(var(--border))",
+              border: plan.featured
+                ? "2px solid hsl(var(--cargus-orange))"
+                : "1px solid hsl(var(--border))",
+              background: "hsl(var(--card))",
               padding: "20px 16px",
               minHeight: 44,
+              boxShadow: plan.featured
+                ? "var(--shadow-card-hover)"
+                : "var(--shadow-card)",
             }}
           >
+            <style>{`
+              .pricing-card-hover:hover {
+                border-color: hsl(var(--cargus-orange)) !important;
+                background: hsl(30 100% 98%) !important;
+              }
+            `}</style>
+
             {/* Badge */}
             {plan.badge && (
-              <span className="badge-orange text-[11px] mb-2 inline-block">
+              <span className="badge-orange text-[11px] mb-3 inline-block">
                 {plan.badge}
               </span>
             )}
 
+            {/* Chip: plan name */}
+            <div className="mb-2">
+              <span
+                className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1"
+                style={{
+                  fontSize: 11,
+                  color: "hsl(var(--muted-foreground))",
+                  background: "hsl(var(--secondary))",
+                }}
+              >
+                {plan.name}
+              </span>
+            </div>
+
             {/* L1: Volume — primary selection criterion */}
             <p
-              className="font-semibold leading-tight"
+              className="font-bold leading-tight"
               style={{
-                fontSize: 17,
+                fontSize: plan.featured ? 22 : 20,
                 color: "hsl(var(--foreground))",
               }}
             >
               {plan.volume}
             </p>
 
-            {/* L2: Plan name — demoted label */}
-            <p
-              className="uppercase tracking-[0.06em] mt-2"
+            {/* Separator */}
+            <div
+              className="my-3"
               style={{
-                fontSize: 11,
-                color: "hsl(var(--muted-foreground))",
+                height: 1,
+                background: "hsl(var(--cargus-orange) / 0.4)",
               }}
-            >
-              {plan.name}
-            </p>
+            />
 
             {/* L3: Description */}
             <p
-              className="mt-3 leading-snug"
+              className="leading-snug"
               style={{
                 fontSize: 13,
                 color: "hsl(var(--muted-foreground))",
@@ -99,14 +118,15 @@ const PricingSection = () => {
 
             {/* L4: CTA */}
             <span
-              className="inline-flex items-center gap-1.5 mt-3 font-medium"
+              className="inline-flex items-center gap-1.5 mt-3"
               style={{
-                fontSize: 13,
+                fontSize: plan.featured ? 14 : 13,
+                fontWeight: plan.featured ? 600 : 500,
                 color: "hsl(var(--cargus-orange))",
               }}
             >
               {plan.cta}
-              <ArrowRight size={15} />
+              <ArrowRight size={plan.featured ? 16 : 15} />
             </span>
           </a>
         ))}
