@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 25 89% 57%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 6% 96%;
+    --secondary-foreground: 0 0% 12%;
+
+    --muted: 30 6% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 25 89% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 25 89% 57%;
+
+    --radius: 0.75rem;
+
+    /* Cargus Brand Book colors */
+    --cargus-orange: 25 89% 57%;
+    --cargus-orange-dark: 16 78% 39%;
+    --cargus-orange-light: 25 100% 95%;
+    --cargus-orange-hover: 16 78% 39%;
+    --cargus-dark: 0 0% 12%;
+    --cargus-gray-bg: 30 6% 96%;
+    --cargus-gray-dark-bg: 0 0% 20%;
+    --cargus-success: 145 63% 42%;
+
+    --font-heading: 'Montserrat', system-ui, sans-serif;
+    --font-body: 'Montserrat', system-ui, sans-serif;
+
+    --shadow-card: 0 2px 12px 0 hsl(0 0% 0% / 0.06);
+    --shadow-card-hover: 0 4px 20px 0 hsl(0 0% 0% / 0.1);
+    --shadow-sticky: 0 2px 16px 0 hsl(0 0% 0% / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-5 py-12;
+  }
+
+  .section-heading {
+    @apply text-2xl font-extrabold tracking-tight leading-tight;
+    color: hsl(var(--foreground));
+  }
+
+  .section-subheading {
+    @apply text-base font-normal leading-relaxed mt-3;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .section-divider {
+    @apply w-16 h-1 rounded-full mb-4;
+    background: hsl(var(--cargus-orange));
+  }
+
+  .cta-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-bold text-base transition-all duration-200;
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+    min-height: 52px;
+    touch-action: manipulation;
+  }
+
+  .cta-primary:hover {
+    background: hsl(var(--cargus-orange-hover));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px hsl(var(--cargus-orange) / 0.3);
+  }
+
+  .cta-primary:active {
+    transform: translateY(0);
+  }
+
+  .cta-secondary {
+    @apply inline-flex items-center justify-between w-full px-6 py-4 rounded-xl font-semibold text-base border transition-all duration-200;
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+    background: hsl(var(--background));
+    min-height: 52px;
+    touch-action: manipulation;
+  }
+
+  .cta-secondary:hover {
+    border-color: hsl(var(--cargus-orange));
+    color: hsl(var(--cargus-orange));
+  }
+
+  .info-card {
+    @apply rounded-2xl p-5 transition-all duration-200;
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-card);
+  }
+
+  .info-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .icon-circle {
+    @apply flex items-center justify-center w-12 h-12 rounded-full shrink-0;
+    background: hsl(var(--cargus-orange-light));
+    color: hsl(var(--cargus-orange));
+  }
+
+  .badge-orange {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+    background: hsl(var(--cargus-orange-light));
+    color: hsl(var(--cargus-orange));
+  }
+
+  .stat-number {
+    @apply text-3xl font-black;
+    color: hsl(var(--foreground));
+  }
+
+  .stat-label {
+    @apply text-sm font-medium;
+    color: hsl(var(--muted-foreground));
+  }
+
+  .dark-section {
+    background: hsl(var(--cargus-dark));
+    color: hsl(0 0% 100%);
+  }
+
+  .dark-section .section-heading {
+    color: hsl(0 0% 100%);
+  }
+
+  .dark-section .section-subheading {
+    color: hsl(0 0% 70%);
+  }
+
+  .dark-section .stat-number {
+    color: hsl(0 0% 100%);
+  }
+
+  .dark-section .stat-label {
+    color: hsl(0 0% 70%);
+  }
+}
