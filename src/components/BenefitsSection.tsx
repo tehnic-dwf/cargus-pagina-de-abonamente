@@ -27,7 +27,7 @@ const secondaryBenefits = [
 
 const BenefitsSection = () => {
   return (
-    <section id="beneficii" className="section-padding !py-10 bg-card border border-border rounded-2xl mx-5">
+    <section id="beneficii" className="section-padding !py-10 bg-background">
       <h2 className="section-heading !text-xl">De ce aleg antreprenorii Cargus?</h2>
 
       {/* Primary benefits */}
