@@ -44,26 +44,14 @@ const PricingSection = () => {
           <a
             key={plan.id}
             href={plan.ctaHref}
-            className="group block rounded-2xl transition-all duration-200 active:scale-[0.98]"
-            style={{
-              border: plan.featured
-                ? "2px solid hsl(var(--cargus-orange))"
-                : "1px solid hsl(var(--border))",
-              background: "hsl(var(--card))",
-              padding: "20px 16px",
-              minHeight: 44,
-              boxShadow: plan.featured
-                ? "var(--shadow-card-hover)"
-                : "var(--shadow-card)",
-            }}
+            className={[
+              "group block rounded-2xl transition-all duration-200 active:scale-[0.98]",
+              plan.featured
+                ? "border-2 border-cargus-orange bg-card shadow-card-hover"
+                : "border border-border bg-card shadow-card hover:border-cargus-orange hover:bg-[hsl(30,100%,98%)]",
+            ].join(" ")}
+            style={{ padding: "20px 16px", minHeight: 44 }}
           >
-            <style>{`
-              .pricing-card-hover:hover {
-                border-color: hsl(var(--cargus-orange)) !important;
-                background: hsl(30 100% 98%) !important;
-              }
-            `}</style>
-
             {/* Badge */}
             {plan.badge && (
               <span className="badge-orange text-[11px] mb-3 inline-block">
@@ -73,50 +61,31 @@ const PricingSection = () => {
 
             {/* Chip: plan name */}
             <div className="mb-2">
-              <span
-                className="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1"
-                style={{
-                  fontSize: 11,
-                  color: "hsl(var(--muted-foreground))",
-                  background: "hsl(var(--secondary))",
-                }}
-              >
+              <span className="inline-flex items-center rounded-md px-2.5 py-1 text-[11px] text-muted-foreground bg-secondary">
                 {plan.name}
               </span>
             </div>
 
-            {/* L1: Volume — primary selection criterion */}
+            {/* Volume — primary selection criterion */}
             <p
-              className="font-bold leading-tight"
-              style={{
-                fontSize: plan.featured ? 22 : 20,
-                color: "hsl(var(--foreground))",
-              }}
+              className="font-bold leading-tight text-foreground"
+              style={{ fontSize: plan.featured ? 22 : 20 }}
             >
               {plan.volume}
             </p>
 
             {/* Separator */}
             <div
-              className="my-3"
-              style={{
-                height: 1,
-                background: "hsl(var(--cargus-orange) / 0.4)",
-              }}
+              className="my-3 h-px"
+              style={{ background: "hsl(var(--cargus-orange) / 0.4)" }}
             />
 
-            {/* L3: Description */}
-            <p
-              className="leading-snug"
-              style={{
-                fontSize: 13,
-                color: "hsl(var(--muted-foreground))",
-              }}
-            >
+            {/* Description */}
+            <p className="text-[13px] leading-snug text-muted-foreground">
               {plan.desc}
             </p>
 
-            {/* L4: CTA */}
+            {/* CTA */}
             <span
               className="inline-flex items-center gap-1.5 mt-3"
               style={{
