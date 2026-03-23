@@ -14,8 +14,7 @@ const HeroSection = () => {
         <div
           className="absolute inset-0"
           style={{
-            background:
-              "linear-gradient(160deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.72) 100%)",
+            background: "linear-gradient(160deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.72) 100%)",
           }}
         />
 
@@ -49,10 +48,7 @@ const HeroSection = () => {
             >
               Tarife negociate și manager dedicat, de la primul colet
             </h1>
-            <p
-              className="text-[15px] text-primary-foreground/[0.88] mt-3"
-              style={{ lineHeight: 1.6, fontWeight: 400 }}
-            >
+            <p className="text-[15px] text-primary-foreground/[0.88] mt-3" style={{ lineHeight: 1.6, fontWeight: 400 }}>
               Peste 50.000 de magazine online livrează cu Cargus.
             </p>
 
@@ -64,9 +60,7 @@ const HeroSection = () => {
                   <Star key={i} size={14} className="fill-cargus-orange text-cargus-orange" />
                 ))}
               </div>
-              <span className="text-[13px] font-medium text-primary-foreground/80">
-                4.8/5 — 40.805 recenzii eKomi
-              </span>
+              <span className="text-[13px] font-medium text-primary-foreground/80">4.8/5 — 40.805 recenzii eKomi</span>
             </div>
           </div>
         </div>
@@ -79,7 +73,7 @@ const HeroSection = () => {
           className="cta-primary w-full justify-center text-base"
           style={{ paddingTop: 14, paddingBottom: 14 }}
         >
-          Calculează tariful tău
+          Devino partener Cargus
           <ArrowRight size={20} />
         </a>
       </div>
