@@ -69,7 +69,7 @@ const HeroSection = () => {
       {/* CTA */}
       <div className="px-5 pt-5 pb-6 border-b border-border">
         <a
-          href="#cere-oferta"
+          href="#preturi"
           className="cta-primary w-full justify-center text-base"
           style={{ paddingTop: 14, paddingBottom: 14 }}
         >
