@@ -45,7 +45,7 @@ const Index = () => {
       </main>
       <FooterSection />
       <StickyBottomBar />
-      <div className="h-16" />
+      <div className="h-20" />
     </div>
   );
 };
