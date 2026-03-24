@@ -66,6 +66,19 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Trust badges row */}
+      <div className="flex items-center justify-center gap-4 px-5 pt-4 pb-3 border-b border-border bg-secondary">
+        <div className="flex items-center gap-1.5">
+          <span className="w-[6px] h-[6px] rounded-full bg-cargus-success inline-block" />
+          <span className="text-[11px] text-muted-foreground font-medium">96% livrări la timp</span>
+        </div>
+        <div className="w-px h-4 bg-border" />
+        <div className="flex items-center gap-1.5">
+          <span className="w-[6px] h-[6px] rounded-full bg-cargus-success inline-block" />
+          <span className="text-[11px] text-muted-foreground font-medium">3.000+ puncte SHIP & GO</span>
+        </div>
+      </div>
+
       {/* CTA */}
       <div className="px-5 pt-5 pb-6 border-b border-border">
         <a

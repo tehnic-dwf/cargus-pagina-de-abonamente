@@ -85,7 +85,7 @@ const SocialProofSection = () => {
       </div>
 
       {/* Trust badges */}
-      <div className="mt-8 flex items-center justify-center gap-6">
+      <div className="mt-8 flex items-center justify-center gap-5">
         <div className="text-center">
           <div className="text-2xl font-black text-foreground">30+</div>
           <div className="text-xs text-muted-foreground">ani experiență</div>
@@ -97,8 +97,8 @@ const SocialProofSection = () => {
         </div>
         <div className="w-px h-10 bg-border" />
         <div className="text-center">
-          <div className="text-2xl font-black text-foreground">98%</div>
-          <div className="text-xs text-muted-foreground">livrate în 24-48h</div>
+          <div className="text-2xl font-black text-foreground">13.500+</div>
+          <div className="text-xs text-muted-foreground">localități acoperite</div>
         </div>
       </div>
     </section>

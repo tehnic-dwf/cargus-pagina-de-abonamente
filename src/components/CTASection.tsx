@@ -37,6 +37,19 @@ const CTASection = () => {
         Completează formularul și primești o ofertă adaptată nevoilor tale.
       </p>
 
+      {/* Trust awards */}
+      <div className="flex flex-wrap items-center gap-3 mt-4">
+        <span className="inline-flex items-center gap-1.5 text-[11px] text-primary-foreground/60 font-medium bg-primary-foreground/5 rounded-full px-3 py-1.5">
+          🏆 #1 experiență clienți AI — Romanian Contact Center Awards 2025
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-[11px] text-primary-foreground/60 font-medium bg-primary-foreground/5 rounded-full px-3 py-1.5">
+          🥈 Medalia de Argint EcoVadis
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-[11px] text-primary-foreground/60 font-medium bg-primary-foreground/5 rounded-full px-3 py-1.5">
+          ✅ Certificare ISO 9001:2015
+        </span>
+      </div>
+
       <div className="flex items-center gap-2 mt-4">
         <Clock size={16} className="text-cargus-orange" />
         <span className="text-sm text-primary-foreground/70">Durează mai puțin de 2 minute</span>

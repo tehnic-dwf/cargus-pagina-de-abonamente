@@ -8,15 +8,19 @@ import {
 const faqs = [
   {
     q: "Ce tipuri de colete pot trimite prin Cargus?",
-    a: "Poți trimite colete standard (până la 31.5 kg), plicuri, colete voluminoase și paleți. Acceptăm o gamă largă de dimensiuni — contactează-ne pentru detalii specifice despre categorii restricționate.",
+    a: "Poți trimite colete standard (până la 31.5 kg), plicuri, colete voluminoase și paleți. Acoperim o gamă completă: Click & Collect, Standard, Standard 31+ și Standard 50+.",
   },
   {
     q: "Care sunt zonele de livrare și tarifele pe zone?",
-    a: "Cargus livrează în toată România, cu acoperire completă. Tarifele variază în funcție de greutate, dimensiune și zonă — cu planul Abonament Complet, beneficiezi de un preț fix care include toate zonele.",
+    a: "Cargus livrează în toată România — peste 13.500 de localități. Cu planul Abonament, beneficiezi de un preț fix care include toate zonele. Livrăm și internațional în Bulgaria și Grecia.",
   },
   {
     q: "Cum funcționează rambursul (plata la livrare)?",
     a: "Oferim serviciu de ramburs inclus în toate planurile. Sumele colectate sunt virate în contul tău bancar în 1-3 zile lucrătoare. Poți seta valoarea rambursului pe fiecare AWB.",
+  },
+  {
+    q: "Ce metode de plată acceptă curierul?",
+    a: "Clienții tăi pot plăti cash, cu cardul la curier, online, prin Google Pay sau Apple Pay. Oferim cele mai moderne opțiuni de plată pentru o experiență completă.",
   },
   {
     q: "Ce se întâmplă dacă un colet se pierde sau se deteriorează?",
@@ -24,11 +28,15 @@ const faqs = [
   },
   {
     q: "Cum integrez Cargus cu platforma mea e-commerce?",
-    a: "Oferim integrări native cu Shopify, WooCommerce, Magento, PrestaShop și alte platforme populare. De asemenea, API-ul nostru permite integrări personalizate. Suportul tehnic te ajută cu setup-ul.",
+    a: "Oferim plugin-uri native pentru WooCommerce, PrestaShop, Magento și OpenCart. API-ul nostru permite integrări personalizate, plus un widget gratuit pentru checkout cu puncte și lockere SHIP & GO.",
+  },
+  {
+    q: "Livrați și internațional?",
+    a: "Da, Cargus oferă livrări internaționale din România către Bulgaria și Grecia, cu extindere planificată către alte destinații.",
   },
   {
     q: "Pot schimba sau anula planul oricând?",
-    a: "Da, planul Sign & Go nu are perioadă minimă — poți opri oricând. Pentru Abonamentul Complet, perioada minimă este de 12 luni, cu posibilitatea de upgrade pe parcurs.",
+    a: "Da, planul Sign & Go nu are perioadă minimă — poți opri oricând. Pentru Abonament, perioada minimă este de 12 luni, cu posibilitatea de upgrade pe parcurs.",
   },
 ];
 
