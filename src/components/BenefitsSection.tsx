@@ -1,20 +1,30 @@
-import { ArrowRight, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck } from "lucide-react";
+import { ArrowRight, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, CreditCard, ShoppingCart, Puzzle } from "lucide-react";
 
 const primaryBenefits = [
   {
     icon: ArrowRight,
     title: "Livrare în 24-48h",
-    desc: "98% din colete ajung la timp. Garanție de performanță.",
+    desc: "96% din colete ajung la timp. Garanție de performanță.",
   },
   {
     icon: MapPin,
-    title: "3.000+ puncte ridicare",
-    desc: "Clienții tăi ridică coletul de lângă ei.",
+    title: "3.000+ puncte SHIP & GO",
+    desc: "Clienții tăi ridică coletul de lângă ei, din lockere și puncte.",
   },
   {
     icon: Banknote,
     title: "Ramburs fără costuri extra",
     desc: "Banii ajung la tine automat, inclus în tarif.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Integrare e-commerce",
+    desc: "Plugin-uri native WooCommerce, PrestaShop, Magento, OpenCart.",
+  },
+  {
+    icon: CreditCard,
+    title: "Plăți moderne la livrare",
+    desc: "Cash, card la curier, Google Pay, Apple Pay — clientul alege.",
   },
 ];
 
@@ -23,6 +33,8 @@ const secondaryBenefits = [
   { icon: ArrowLeftRight, text: "Retur simplificat" },
   { icon: Headphones, text: "Suport business" },
   { icon: UserCheck, text: "Manager dedicat" },
+  { icon: Puzzle, text: "Widget checkout gratuit" },
+  { icon: ArrowRight, text: "2 încercări de livrare" },
 ];
 
 const BenefitsSection = () => {
