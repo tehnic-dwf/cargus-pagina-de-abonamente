@@ -1,4 +1,4 @@
-import { Zap, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, CreditCard, ShoppingCart, Puzzle } from "lucide-react";
+import { Zap, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, CreditCard, ShoppingCart, Puzzle, RotateCcw } from "lucide-react";
 
 const primaryBenefits = [
   {
