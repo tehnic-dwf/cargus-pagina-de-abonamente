@@ -1,8 +1,8 @@
-import { ArrowRight, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, CreditCard, ShoppingCart, Puzzle } from "lucide-react";
+import { Zap, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, CreditCard, ShoppingCart, Puzzle, RotateCcw } from "lucide-react";
 
 const primaryBenefits = [
   {
-    icon: ArrowRight,
+    icon: Zap,
     title: "Livrare în 24-48h",
     desc: "96% din colete ajung la timp. Garanție de performanță.",
   },
@@ -34,12 +34,12 @@ const secondaryBenefits = [
   { icon: Headphones, text: "Suport business" },
   { icon: UserCheck, text: "Manager dedicat" },
   { icon: Puzzle, text: "Widget checkout gratuit" },
-  { icon: ArrowRight, text: "2 încercări de livrare" },
+  { icon: RotateCcw, text: "2 încercări de livrare" },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section id="beneficii" className="section-padding !pt-8 !pb-10 bg-background border-b border-border">
+    <section id="beneficii" className="section-padding !pt-8 !pb-10 bg-background">
       <h2 className="section-heading !text-xl">De ce aleg antreprenorii Cargus?</h2>
 
       {/* Primary benefits */}

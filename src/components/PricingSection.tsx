@@ -67,7 +67,7 @@ const PricingSection = () => {
             style={{
               padding: "20px 16px",
               minHeight: 44,
-              background: plan.featured ? "#FFFAF7" : undefined,
+              background: plan.featured ? "hsl(var(--cargus-orange-light))" : undefined,
             }}
           >
             {/* Badge + Chip row */}
