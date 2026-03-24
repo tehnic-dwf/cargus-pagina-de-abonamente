@@ -34,7 +34,7 @@ const secondaryBenefits = [
   { icon: Headphones, text: "Suport business" },
   { icon: UserCheck, text: "Manager dedicat" },
   { icon: Puzzle, text: "Widget checkout gratuit" },
-  { icon: ArrowRight, text: "2 încercări de livrare" },
+  { icon: RotateCcw, text: "2 încercări de livrare" },
 ];
 
 const BenefitsSection = () => {
