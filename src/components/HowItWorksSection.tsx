@@ -59,13 +59,10 @@ const HowItWorksSection = () => {
       </div>
 
       <a
-        href="https://www.cargus.ro/creeaza-cont/"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#cere-oferta"
         className="cta-primary w-full justify-center"
-        style={{ background: 'hsl(var(--foreground))', color: 'hsl(var(--background))' }}
       >
-        <span>Creează-ți cont acum</span>
+        <span>Cere ofertă personalizată</span>
         <ArrowRight size={18} />
       </a>
     </section>

@@ -2,7 +2,7 @@ import { Zap, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, Cred
 
 const primaryBenefits = [
   {
-    icon: ArrowRight,
+    icon: Zap,
     title: "Livrare în 24-48h",
     desc: "96% din colete ajung la timp. Garanție de performanță.",
   },
