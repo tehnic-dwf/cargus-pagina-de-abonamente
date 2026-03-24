@@ -47,7 +47,7 @@ const plans = [
 ];
 const PricingSection = () => {
   return (
-    <section id="preturi" className="section-padding bg-secondary">
+    <section id="preturi" className="section-padding bg-background">
       <h2 className="section-heading">Planuri & Prețuri</h2>
       <p className="section-subheading">
         Câte colete trimiți lunar?
