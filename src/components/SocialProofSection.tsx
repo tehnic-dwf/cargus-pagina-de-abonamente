@@ -27,7 +27,7 @@ const SocialProofSection = () => {
   const t = testimonials[current];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-secondary">
       <h2 className="section-heading">Ce spun antreprenorii</h2>
 
       {/* Rating summary */}
