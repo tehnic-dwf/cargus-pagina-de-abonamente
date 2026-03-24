@@ -38,16 +38,17 @@ const CTASection = () => {
       </p>
 
       {/* Trust awards */}
-      <div className="flex flex-wrap items-center gap-3 mt-4">
-        <span className="inline-flex items-center gap-1.5 text-[11px] text-primary-foreground/60 font-medium bg-primary-foreground/5 rounded-full px-3 py-1.5">
-          🏆 #1 experiență clienți AI — Romanian Contact Center Awards 2025
-        </span>
-        <span className="inline-flex items-center gap-1.5 text-[11px] text-primary-foreground/60 font-medium bg-primary-foreground/5 rounded-full px-3 py-1.5">
-          🥈 Medalia de Argint EcoVadis
-        </span>
-        <span className="inline-flex items-center gap-1.5 text-[11px] text-primary-foreground/60 font-medium bg-primary-foreground/5 rounded-full px-3 py-1.5">
-          ✅ Certificare ISO 9001:2015
-        </span>
+      <div className="flex flex-col gap-1.5 mt-4">
+        {[
+          "#1 experiență clienți AI — Romanian Contact Center Awards 2025",
+          "Medalia de Argint EcoVadis",
+          "Certificare ISO 9001:2015",
+        ].map((item) => (
+          <div key={item} className="flex items-center gap-1.5">
+            <span className="w-[6px] h-[6px] rounded-full bg-cargus-success inline-block shrink-0" />
+            <span className="text-[11px] text-primary-foreground/60 font-medium">{item}</span>
+          </div>
+        ))}
       </div>
 
       <div className="flex items-center gap-2 mt-4">
