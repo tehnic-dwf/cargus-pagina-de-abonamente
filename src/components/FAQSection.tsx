@@ -42,7 +42,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="section-padding">
+    <section id="faq" className="section-padding bg-secondary">
       <h2 className="section-heading">Întrebări frecvente</h2>
       <p className="section-subheading">
         Răspunsuri rapide la cele mai comune întrebări ale antreprenorilor.
