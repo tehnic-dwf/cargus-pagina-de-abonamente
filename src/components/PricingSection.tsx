@@ -108,11 +108,15 @@ const PricingSection = () => {
             </p>
 
             {/* Trust chip */}
-            <div className="flex items-center gap-1.5 mt-3">
-              <span className="w-[6px] h-[6px] rounded-full bg-cargus-success inline-block" />
-              <span className="text-[11px] text-muted-foreground font-medium">
-                {plan.trust}
-              </span>
+            <div className="flex flex-col gap-1.5 mt-3">
+              {plan.trust.map((item) => (
+                <div key={item} className="flex items-center gap-1.5">
+                  <span className="w-[6px] h-[6px] rounded-full bg-cargus-success inline-block shrink-0" />
+                  <span className="text-[11px] text-muted-foreground font-medium">
+                    {item}
+                  </span>
+                </div>
+              ))}
             </div>
 
             {/* CTA */}
