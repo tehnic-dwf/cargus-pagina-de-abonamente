@@ -30,7 +30,7 @@ const steps = [
 
 const HowItWorksSection = () => {
   return (
-    <section id="cum-functioneaza" className="section-padding bg-secondary">
+    <section id="cum-functioneaza" className="section-padding bg-background">
       <h2 className="section-heading">Cum funcționează?</h2>
       <p className="section-subheading">
         4 pași simpli de la înregistrare la livrare.
