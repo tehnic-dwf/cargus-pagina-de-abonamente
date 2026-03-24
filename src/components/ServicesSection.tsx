@@ -11,7 +11,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section id="servicii" className="section-padding !py-10 bg-secondary">
+    <section id="servicii" className="section-padding !py-10 bg-background">
       <h2 className="section-heading !text-xl">Servicii disponibile</h2>
       <p className="text-sm text-muted-foreground mt-1">Gama completă de soluții de curierat.</p>
 
