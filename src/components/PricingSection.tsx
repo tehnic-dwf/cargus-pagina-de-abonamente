@@ -6,7 +6,11 @@ const plans = [
     volume: "Sub 30 colete/lună",
     name: "Sign & Go",
     desc: "Fără contract. Plătești doar ce trimiți, fără abonament lunar.",
-    trust: "Activare imediată",
+    trust: [
+      "Fără contract sau perioadă minimă",
+      "3.000+ puncte SHIP & GO",
+      "Tracking în timp real",
+    ],
     cta: "Începe acum",
     ctaHref: "#cere-oferta",
     featured: false,
@@ -16,7 +20,11 @@ const plans = [
     volume: "30–300 colete/lună",
     name: "Abonament",
     desc: "Tarif fix lunar + manager dedicat care îți răspunde direct.",
-    trust: "Manager dedicat de cont",
+    trust: [
+      "Preț fix pe durata contractului",
+      "Ridicare de la adresă inclusă",
+      "Account manager dedicat",
+    ],
     cta: "Vezi planuri",
     ctaHref: "#cere-oferta",
     featured: true,
@@ -27,13 +35,16 @@ const plans = [
     volume: "Peste 300 colete/lună",
     name: "Soluție personalizată",
     desc: "Ofertă negociată, integrare API și echipă dedicată volume mari.",
-    trust: "Răspuns în 24h",
+    trust: [
+      "Tarife negociate pe volum",
+      "Integrare API completă",
+      "Manager logistic dedicat",
+    ],
     cta: "Solicită ofertă",
     ctaHref: "#contact",
     featured: false,
   },
 ];
-
 const PricingSection = () => {
   return (
     <section id="preturi" className="section-padding bg-secondary">
