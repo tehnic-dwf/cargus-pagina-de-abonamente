@@ -1,5 +1,5 @@
 import { ArrowRight, Star, ChevronRight } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-antreprenori.jpg";
 
 const HeroSection = () => {
   return (
