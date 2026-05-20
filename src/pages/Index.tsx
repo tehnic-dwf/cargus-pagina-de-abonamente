@@ -10,6 +10,7 @@ import CTASection from "@/components/CTASection";
 import DownloadAppSection from "@/components/DownloadAppSection";
 import FooterSection from "@/components/FooterSection";
 import StickyBottomBar from "@/components/StickyBottomBar";
+import FloatingChatButton from "@/components/FloatingChatButton";
 import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
@@ -45,6 +46,7 @@ const Index = () => {
       </main>
       <FooterSection />
       <StickyBottomBar />
+      <FloatingChatButton />
       <div className="h-20" />
     </div>
   );

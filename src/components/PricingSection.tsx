@@ -53,39 +53,46 @@ const PricingSection = () => {
         Câte colete trimiți lunar?
       </p>
 
-      <div className="mt-8 space-y-4">
+      <div className="mt-8 space-y-5">
         {plans.map((plan) => (
-          <a
+          <div
             key={plan.id}
-            href={plan.ctaHref}
             className={[
-              "group block rounded-2xl transition-all duration-200 active:scale-[0.98]",
+              "relative rounded-2xl transition-all duration-200",
               plan.featured
-                ? "border-2 border-cargus-orange shadow-card-hover"
-                : "border border-border bg-card shadow-card hover:border-cargus-orange hover:bg-[hsl(30,100%,98%)]",
+                ? "border-2 border-cargus-orange bg-card"
+                : "border border-border bg-card",
             ].join(" ")}
             style={{
-              padding: "20px 16px",
-              minHeight: 44,
-              background: plan.featured ? "hsl(var(--cargus-orange-light))" : undefined,
+              padding: plan.featured ? "24px 18px 20px" : "20px 16px",
+              boxShadow: plan.featured
+                ? "0 12px 32px -8px hsl(var(--cargus-orange) / 0.35), 0 2px 8px hsl(0 0% 0% / 0.06)"
+                : "var(--shadow-card)",
             }}
           >
-            {/* Badge + Chip row */}
-            <div className="flex items-center gap-2 mb-2">
-              {plan.badge && (
-                <span className="badge-orange text-[11px]">
-                  {plan.badge}
-                </span>
-              )}
-              <span className="inline-flex items-center rounded-md px-2.5 py-1 text-[11px] text-muted-foreground bg-secondary">
-                {plan.name}
-              </span>
-            </div>
+            {/* Recommended badge - centered on top */}
+            {plan.featured && (
+              <div
+                className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider whitespace-nowrap"
+                style={{
+                  background: "hsl(var(--cargus-orange))",
+                  color: "hsl(var(--primary-foreground))",
+                  boxShadow: "0 2px 8px hsl(var(--cargus-orange) / 0.4)",
+                }}
+              >
+                {plan.badge}
+              </div>
+            )}
+
+            {/* Plan name chip */}
+            <span className="inline-flex items-center rounded-md px-2.5 py-1 text-[11px] text-muted-foreground bg-secondary mb-2">
+              {plan.name}
+            </span>
 
             {/* Volume */}
             <p
               className="font-bold leading-tight text-foreground"
-              style={{ fontSize: plan.featured ? 22 : 20 }}
+              style={{ fontSize: plan.featured ? 24 : 20 }}
             >
               {plan.volume}
             </p>
@@ -107,40 +114,48 @@ const PricingSection = () => {
               {plan.desc}
             </p>
 
-            {/* Trust chip */}
+            {/* Trust list */}
             <div className="flex flex-col gap-1.5 mt-3">
               {plan.trust.map((item) => (
                 <div key={item} className="flex items-center gap-1.5">
                   <span className="w-[6px] h-[6px] rounded-full bg-cargus-success inline-block shrink-0" />
-                  <span className="text-[11px] text-muted-foreground font-medium">
+                  <span className="text-[12px] text-foreground/80 font-medium">
                     {item}
                   </span>
                 </div>
               ))}
             </div>
 
-            {/* CTA */}
+            {/* CTA — only featured uses solid orange (blur test) */}
             {plan.featured ? (
-              <span
-                className="flex items-center justify-center gap-1.5 mt-4 w-full rounded-lg text-primary-foreground font-semibold text-[14px]"
+              <a
+                href={plan.ctaHref}
+                className="flex items-center justify-center gap-1.5 mt-5 w-full rounded-lg text-primary-foreground font-semibold text-[14px]"
                 style={{
                   background: "hsl(var(--cargus-orange))",
-                  padding: "10px",
+                  padding: "12px",
+                  minHeight: 48,
                 }}
               >
                 {plan.cta}
                 <ArrowRight size={16} />
-              </span>
+              </a>
             ) : (
-              <span
-                className="inline-flex items-center gap-1.5 mt-3 font-medium text-[13px]"
-                style={{ color: "hsl(var(--cargus-orange))" }}
+              <a
+                href={plan.ctaHref}
+                className="flex items-center justify-center gap-1.5 mt-4 w-full rounded-lg font-semibold text-[14px] border-2 transition-colors"
+                style={{
+                  borderColor: "hsl(var(--border))",
+                  color: "hsl(var(--foreground))",
+                  padding: "10px",
+                  minHeight: 48,
+                }}
               >
                 {plan.cta}
-                <ArrowRight size={15} />
-              </span>
+                <ArrowRight size={16} />
+              </a>
             )}
-          </a>
+          </div>
         ))}
       </div>
     </section>
