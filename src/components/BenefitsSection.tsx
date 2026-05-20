@@ -1,78 +1,90 @@
-import { Zap, MapPin, Banknote, Eye, ArrowLeftRight, Headphones, UserCheck, CreditCard, ShoppingCart, Puzzle, RotateCcw } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { ShieldCheck, Receipt, MapPin, CreditCard, RotateCcw } from "lucide-react";
 
-const primaryBenefits = [
+const benefits = [
   {
-    icon: Zap,
-    title: "Livrare în 24-48h",
-    desc: "96% din colete ajung la timp. Garanție de performanță.",
+    icon: ShieldCheck,
+    title: "Garanția prețului (*)",
+    desc: "Costul abonamentului nu se modifică pe durata celor 12 luni de contract. Afacerea ta crește și vei avea mai multe expedieri? Fără griji, poți trece oricând la un abonament mai mare. Sau poți rămâne cu același abonament și vei beneficia de prețuri speciale pentru expedierile extra.",
   },
   {
-    icon: MapPin,
-    title: "3.000+ puncte SHIP & GO",
-    desc: "Clienții tăi ridică coletul de lângă ei, din lockere și puncte.",
-  },
-  {
-    icon: Banknote,
-    title: "Ramburs fără costuri extra",
-    desc: "Banii ajung la tine automat, inclus în tarif.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "Integrare e-commerce",
-    desc: "Plugin-uri native WooCommerce, PrestaShop, Magento, OpenCart.",
+    icon: Receipt,
+    title: "Fără taxe ascunse sau variabile",
+    desc: "În cadrul unei sume fixe tip abonament, vei putea trimite 20, 50, 100, 200 sau 300 de colete cu greutate până la 31 kg. Nu vei fi obligat să declari cantitatea lunară sau să-ți faci griji pentru fluctuații sezoniere. În plus, poți reporta expedierile neutilizate într-o lună și le folosești când ai nevoie.",
   },
   {
     icon: CreditCard,
-    title: "Plăți moderne la livrare",
-    desc: "Cash, card la curier, Google Pay, Apple Pay — clientul alege.",
+    title: "Formă de plată convenabilă",
+    desc: "Fără bătăi de cap cu plata facturilor către curier. Pentru toate expedierile prin Cargus ai doar o factură lunară cu data scadentă la 14 zile.",
   },
-];
-
-const secondaryBenefits = [
-  { icon: Eye, text: "Tracking real-time" },
-  { icon: ArrowLeftRight, text: "Retur simplificat" },
-  { icon: Headphones, text: "Suport business" },
-  { icon: UserCheck, text: "Manager dedicat" },
-  { icon: Puzzle, text: "Widget checkout gratuit" },
-  { icon: RotateCcw, text: "2 încercări de livrare" },
+  {
+    icon: MapPin,
+    title: "Livrare SHIP & GO de la 10,3 RON",
+    desc: "Crește satisfacția cumpărătorilor și numărul de comenzi oferind clienților posibilitatea de a alege ca adresă de destinație unul din punctele Cargus SHIP & GO, chiar din momentul plasării comenzii. Prețul de transport scade până la 10,3 lei dacă un client selectează ca adresă de livrare un punct SHIP & GO din proximitate.",
+  },
+  {
+    icon: RotateCcw,
+    title: "Cost redus pentru retur",
+    desc: "Costuri reduse pentru retururile de la consumator — doar 11 lei pe colet returnat.",
+  },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section id="beneficii" className="section-padding !pt-8 !pb-10 bg-background">
-      <h2 className="section-heading !text-xl">De ce aleg antreprenorii Cargus?</h2>
+    <section id="beneficii" className="section-padding bg-background">
+      <div className="section-divider" />
+      <h2 className="section-heading uppercase">Descoperă beneficiile</h2>
+      <h3 className="text-base font-bold text-foreground mt-4 uppercase tracking-wide">
+        Scut anti-inflație pentru afacerea ta
+      </h3>
+      <p className="section-subheading">
+        Afacerea ta merită un partener de livrări pe măsură. Cargus îți oferă
+        livrări rapide, sigure, transparență și instrumente utile pentru
+        eficientizarea proceselor de expediere. Tu trebuie doar să te ocupi de
+        dezvoltarea afacerii.
+      </p>
 
-      {/* Primary benefits */}
-      <ul className="mt-6 space-y-5">
-        {primaryBenefits.map((b, i) => (
-          <li key={i} className="flex items-start gap-3.5 px-4">
-            <div
-              className="w-9 h-9 flex items-center justify-center shrink-0 rounded-lg bg-foreground"
+      <Accordion type="single" collapsible className="mt-6" defaultValue="b-0">
+        {benefits.map((b, i) => {
+          const Icon = b.icon;
+          return (
+            <AccordionItem
+              key={i}
+              value={`b-${i}`}
+              className="border-border rounded-xl bg-card mb-2.5 px-4 border"
             >
-              <b.icon size={16} className="text-primary-foreground" strokeWidth={2.5} />
-            </div>
-            <div className="min-w-0">
-              <p className="font-bold text-[14px] text-foreground">{b.title}</p>
-              <p className="text-[13px] text-muted-foreground mt-0.5 leading-snug">{b.desc}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+              <AccordionTrigger className="hover:no-underline py-3.5">
+                <div className="flex items-center gap-3 text-left">
+                  <div className="w-9 h-9 flex items-center justify-center shrink-0 rounded-lg bg-cargus-orange-light">
+                    <Icon
+                      size={18}
+                      className="text-cargus-orange"
+                      strokeWidth={2.4}
+                    />
+                  </div>
+                  <span className="text-[14px] font-bold text-foreground">
+                    {b.title}
+                  </span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="text-[13px] text-muted-foreground leading-relaxed pb-4 pl-12">
+                {b.desc}
+              </AccordionContent>
+            </AccordionItem>
+          );
+        })}
+      </Accordion>
 
-      {/* Secondary benefits grid */}
-      <div className="grid grid-cols-2 gap-2.5 mt-6 px-4">
-        {secondaryBenefits.map((b, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-2.5 rounded-lg bg-secondary px-3 py-2.5"
-          >
-            <div className="w-7 h-7 flex items-center justify-center shrink-0 rounded-md bg-cargus-orange-light">
-              <b.icon size={14} className="text-cargus-orange" strokeWidth={2.5} />
-            </div>
-            <span className="text-[13px] font-semibold text-foreground">{b.text}</span>
-          </div>
-        ))}
-      </div>
+      <p className="text-[10px] text-muted-foreground/70 mt-4 leading-relaxed">
+        * Sub rezerva modificărilor Condițiilor Generale de Furnizare a
+        Serviciilor Poștale aprobate de ANCOM și ale Termenilor și Condițiilor
+        Cargus, publicate pe www.cargus.ro
+      </p>
     </section>
   );
 };

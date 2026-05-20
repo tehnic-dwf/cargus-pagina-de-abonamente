@@ -1,8 +1,6 @@
 import StickyHeader from "@/components/StickyHeader";
 import HeroSection from "@/components/HeroSection";
 import BenefitsSection from "@/components/BenefitsSection";
-import ServicesSection from "@/components/ServicesSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
 import SocialProofSection from "@/components/SocialProofSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
@@ -21,12 +19,6 @@ const Index = () => {
         <HeroSection />
         <AnimatedSection>
           <BenefitsSection />
-        </AnimatedSection>
-        <AnimatedSection>
-          <ServicesSection />
-        </AnimatedSection>
-        <AnimatedSection>
-          <HowItWorksSection />
         </AnimatedSection>
         <AnimatedSection>
           <SocialProofSection />
