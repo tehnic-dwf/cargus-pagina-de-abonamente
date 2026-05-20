@@ -5,9 +5,13 @@ const CTASection = () => {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({
     volume: "",
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
+    service: "",
+    gdpr: false,
+    marketing: false,
   });
   const [submitted, setSubmitted] = useState(false);
   const [volumeError, setVolumeError] = useState(false);
@@ -23,7 +27,7 @@ const CTASection = () => {
         <CheckCircle2 size={48} className="text-cargus-success mx-auto mb-4" />
         <h2 className="section-heading !text-2xl">Mulțumim!</h2>
         <p className="text-base text-primary-foreground/70 mt-3">
-          Am primit cererea ta. Un consultant Cargus te va contacta în maximum 24 de ore lucrătoare cu o ofertă personalizată.
+          Am primit solicitarea ta. Un consultant Cargus te va contacta în maximum 24 de ore lucrătoare cu oferta specială pe bază de abonament.
         </p>
       </section>
     );
@@ -32,9 +36,14 @@ const CTASection = () => {
   return (
     <section id="cere-oferta" className="section-padding dark-section">
       <div className="section-divider !bg-cargus-orange" />
-      <h2 className="section-heading">Cere ofertă personalizată</h2>
+      <p className="text-[11px] tracking-[0.18em] uppercase font-bold text-cargus-orange mb-2">
+        Depășești orice așteptare, nu termene de livrare
+      </p>
+      <h2 className="section-heading">
+        Solicită oferta specială Cargus pe bază de abonament!
+      </h2>
       <p className="section-subheading !text-primary-foreground/70">
-        Completează formularul și primești o ofertă adaptată nevoilor tale.
+        Îți oferim extra colete pentru extra succes. Completează datele și primești oferta adaptată afacerii tale.
       </p>
 
       {/* Trust awards */}
@@ -106,6 +115,28 @@ const CTASection = () => {
                 </p>
               )}
             </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-primary-foreground mb-2">
+                Servicii dorite*
+              </label>
+              <div className="grid grid-cols-3 gap-2">
+                {["National", "International", "Ambele"].map((s) => (
+                  <button
+                    key={s}
+                    onClick={() => setFormData({ ...formData, service: s })}
+                    className={`py-2.5 px-2 rounded-xl text-xs font-semibold border-2 transition-all ${
+                      formData.service === s
+                        ? "border-cargus-orange bg-cargus-orange/10 text-primary-foreground"
+                        : "border-primary-foreground/20 text-primary-foreground/70 hover:border-primary-foreground/40"
+                    }`}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             <button
               onClick={() => {
                 if (!formData.volume) {
@@ -125,21 +156,35 @@ const CTASection = () => {
 
         {step === 1 && (
           <>
-            <div>
-              <label className="block text-sm font-semibold text-primary-foreground mb-1.5">
-                Numele tău
-              </label>
-              <input
-                type="text"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="ex: Ion Popescu"
-                className="w-full px-4 py-3.5 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-cargus-orange transition-colors"
-              />
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <label className="block text-sm font-semibold text-primary-foreground mb-1.5">
+                  Prenume*
+                </label>
+                <input
+                  type="text"
+                  value={formData.firstName}
+                  onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                  placeholder="Ion"
+                  className="w-full px-4 py-3.5 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-cargus-orange transition-colors"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-primary-foreground mb-1.5">
+                  Nume*
+                </label>
+                <input
+                  type="text"
+                  value={formData.lastName}
+                  onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                  placeholder="Popescu"
+                  className="w-full px-4 py-3.5 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-cargus-orange transition-colors"
+                />
+              </div>
             </div>
             <div>
               <label className="block text-sm font-semibold text-primary-foreground mb-1.5">
-                Email
+                Email*
               </label>
               <input
                 type="email"
@@ -151,7 +196,7 @@ const CTASection = () => {
             </div>
             <div>
               <label className="block text-sm font-semibold text-primary-foreground mb-1.5">
-                Telefon
+                Telefon*
               </label>
               <input
                 type="tel"
@@ -161,6 +206,40 @@ const CTASection = () => {
                 className="w-full px-4 py-3.5 rounded-xl bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 text-sm focus:outline-none focus:border-cargus-orange transition-colors"
               />
             </div>
+
+            <label className="flex items-start gap-2.5 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.gdpr}
+                onChange={(e) => setFormData({ ...formData, gdpr: e.target.checked })}
+                className="mt-0.5 w-4 h-4 accent-cargus-orange shrink-0"
+              />
+              <span className="text-[11px] leading-relaxed text-primary-foreground/60">
+                Sunt de acord cu procesarea datelor personale de către Cargus SRL în scopul transmiterii de comunicări comerciale, conform{" "}
+                <a
+                  href="https://www.cargus.ro/politica-de-prelucrare-a-datelor-cu-caracter-personal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cargus-orange underline"
+                >
+                  Politicii de prelucrare a datelor cu caracter personal
+                </a>
+                .
+              </span>
+            </label>
+
+            <label className="flex items-start gap-2.5 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={formData.marketing}
+                onChange={(e) => setFormData({ ...formData, marketing: e.target.checked })}
+                className="mt-0.5 w-4 h-4 accent-cargus-orange shrink-0"
+              />
+              <span className="text-[11px] leading-relaxed text-primary-foreground/60">
+                Doresc să primesc oferta Cargus pentru companii.
+              </span>
+            </label>
+
             <div className="flex gap-3">
               <button
                 onClick={() => setStep(0)}
@@ -170,13 +249,17 @@ const CTASection = () => {
               </button>
               <button
                 onClick={handleSubmit}
-                disabled={!formData.name || !formData.email || !formData.phone}
+                disabled={!formData.firstName || !formData.lastName || !formData.email || !formData.phone || !formData.gdpr}
                 className="cta-primary flex-[2] justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Trimite cererea
+                Trimite solicitarea
                 <ArrowRight size={18} />
               </button>
             </div>
+
+            <p className="text-[10px] text-primary-foreground/40 text-center pt-1">
+              * Ofertă valabilă conform termenilor afișați pe cargus.ro
+            </p>
           </>
         )}
       </div>
