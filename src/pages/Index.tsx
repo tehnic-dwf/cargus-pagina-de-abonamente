@@ -46,6 +46,7 @@ const Index = () => {
       </main>
       <FooterSection />
       <StickyBottomBar />
+      <FloatingChatButton />
       <div className="h-20" />
     </div>
   );
